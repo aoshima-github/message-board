@@ -20,11 +20,7 @@ class MessagesController < ApplicationController
     end
   end
   
-  private
-  
-  def set_message
-    @message = Message.find(params[:id])
-  end
+  #private
   
   def index
     @message = Message.new
@@ -49,4 +45,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:name, :body)
   end
   # ここまで
+  def set_message
+    @message = Message.find(params[:id])
+  end
 end
